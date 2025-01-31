@@ -3,7 +3,7 @@ const scriptName = path.basename(__filename);
 
 const test_data = {
     "title": scriptName,
-    "user_id": "01jjx8adx0hxyvw97v08pa6gqr",
+    "user_id": "",
     
    
     "header": {

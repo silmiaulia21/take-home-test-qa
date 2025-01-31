@@ -1,0 +1,12 @@
+node_modules
+
+package-lock.json
+
+.env
+.idea/
+*.DS_Store
+.npmrc
+
+.vscode
+jest_html_reporters.html
+jest-html-reporters-attach/
