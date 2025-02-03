@@ -5,7 +5,7 @@ const verify = require('../utilities/verifier')
 const verifier = new verify()
 
 let testData = require('require-all')({
-    dirname: __dirname + '/../test-data/get-user-logout'
+    dirname: __dirname + '/../test-data/user-logout'
 });
 
 describe('GET USER LOGOUT', () => {

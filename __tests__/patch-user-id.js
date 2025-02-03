@@ -30,7 +30,7 @@ describe('Patch User Id', () => {
             let token = null
 
             loginSuccess.body["email"] = email
-            console.log(email)
+            // console.log(email)
           
             res = await login.postUserLogin(loginSuccess.header, loginSuccess.body)
             token = res.body.access_token
@@ -43,7 +43,7 @@ describe('Patch User Id', () => {
             } else if (!title.includes("email")){
                 editEmail = generateRandomEmail()
                 body["email"] = editEmail
-                console.log(editEmail)
+                // console.log(editEmail)
             }
 
             res = await userID.patchUserId(header, body, register_user_id)

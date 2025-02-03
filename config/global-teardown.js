@@ -2,23 +2,22 @@ const globalVariable = require('../global-variables.json');
 const request = require('supertest');
 
 module.exports = async function (globalConfig, projectConfig) {
-    await logoutUser();
+    console.log("--GLOBAL TEARDOWN--")
+    let logout = await getLogout();
+    console.log(logout);
+   
 };
 
-async function logoutUser() {
-    let endPoint = `/users/${globalVariable.__USER_ID__}/logout`; // Sesuaikan endpoint jika perlu
-    console.log(`Logging out: GET ${endPoint}`);
-
+async function getLogout() {
+    let endPoint = '/users/logout';
     let header = {
         "accept": "application/json",
         "Authorization": `Bearer ${globalVariable.__TOKEN__}`
     };
+    let param = {};
 
-    try {
-        let res = await request(globalVariable.__URL__).get(endPoint).set(header);
-        console.log("Logout Response:", res.body);
-        return res.body;
-    } catch (error) {
-        console.error("Logout failed:", error);
-    }
-};
+    let res = await request(globalVariable.__URL__).get(endPoint).set(header).send(param);
+    return res.body;
+}
+
+

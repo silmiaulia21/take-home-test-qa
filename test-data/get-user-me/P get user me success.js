@@ -19,8 +19,7 @@ const test_data = {
             "country": "Indonesia",
             "postcode": "17137",
             "phone": "081385253285",
-            "dob": "2000-08-21",
-            "email": "Balini210@gmail.com"
+            "dob": "2000-08-21"
         },
         "json_schema": {
             "type": "object",

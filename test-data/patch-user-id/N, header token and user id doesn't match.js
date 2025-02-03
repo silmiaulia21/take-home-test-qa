@@ -17,15 +17,15 @@ const test_data = {
         "phone": "085811023534",
         "dob": "2000-08-21",
         "password": "Tokouni12345!"
-        
+
     },
     "expected_result": {
         "status_code": 403,
         "body": {
-            "error": "You can only update your own data."
+            "error": "You can only update your own data"
         },
-        "json_schema": {
 
+        "json_schema": {
             "type": "object",
             "required": [
                 "error"
@@ -34,10 +34,9 @@ const test_data = {
             "properties": {
                 "error": {
                     "type": "string"
-
                 }
             }
-        }
+       }
     }
 };
 

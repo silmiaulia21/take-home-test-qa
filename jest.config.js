@@ -17,7 +17,8 @@ const config = {
     ],
     setupFilesAfterEnv: [
         "jest-expect-message"
-    ]
+    ],
+    testTimeout: 10000
 };
 
 module.exports = config;

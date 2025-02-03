@@ -15,7 +15,7 @@ describe('POST USER REGISTER', () => {
     test.each(Object.values(testData))(
         "$title ", async ({ title, email, header, body, expected_result }) => {
 
-            if(title.includes('register success')) {
+            if(title.includes('register success')) { 
                 email = generateRandomEmail()
                 body["email"] = email
             }

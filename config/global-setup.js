@@ -1,8 +1,10 @@
 const globalVariable = require('../global-variables.json');
 const request = require('supertest');
+const {generateRandomEmail} = require('../utilities/helper');
 const fs = require('fs');
 
 module.exports = async function (globalConfig, projectConfig) {
+    console.log("--GLOBAL SETUP--")
     let Register = await getRegisterUser();
 
     globalVariable.__USER_ID__ = Register.id;
@@ -34,8 +36,11 @@ async function getRegisterUser() {
         "phone": globalVariable.__PHONE_NUMBER__,
         "dob": globalVariable.__DOB__,
         "password": globalVariable.__PASSWORD__,
-        "email": globalVariable.__EMAIL__
+        "email": generateRandomEmail()
     };
+
+    globalVariable.__EMAIL__ = body.email
+    console.log(globalVariable.__EMAIL__)
 
     let res = await request(globalVariable.__URL__).post(endPoint).set(header).send(body);
     return res.body;

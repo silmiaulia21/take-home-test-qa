@@ -12,17 +12,22 @@ const test_data = {
         "new_password_confirmation": "Tokouni12345!"
     },
     "expected_result": {
-        "status_code": 422,
+        "status_code": 400,
         "body": {
-            "message": "The new password field is required."
+            "success": false,"message":"Your current password does not matches with the password."
         },
+
         "json_schema": {
             "type": "object",
             "required": [
+                "success",
                 "message"
             ],
             "additionalProperties": false,
             "properties": {
+                "success": {
+                    "type": "boolean"
+                },
                 "message": {
                     "type": "string"
                 }
