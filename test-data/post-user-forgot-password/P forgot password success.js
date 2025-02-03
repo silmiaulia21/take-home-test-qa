@@ -5,27 +5,30 @@ const test_data = {
     "title": scriptName,
     "header": {
         "accept": "application/json",
-        "Authorization": "",
     },
-    "param": {},
+    "body": {
+        "email": "Balini210@gmail.com",
+
+    },
     "expected_result": {
-        "status_code": 401,
+        "status_code": 200,
         "body": {
-            "message": "Unauthorized"
+            "success": true
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "message"
+                "success"
             ],
             "additionalProperties": false,
             "properties": {
-                "message": {
-                    "type": "string"
+                "success": {
+                    "type": "boolean"
                 }
             }
-        },
-    }
+        }
+    },
 }
+
 
 module.exports = test_data;

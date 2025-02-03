@@ -5,18 +5,14 @@ const test_data = {
     "title": scriptName,
     "header": {
         "accept": "application/json",
-        
+        "Authorization": `Bearer ${__TOKEN__}`
     },
-    "body": {
-        "email": __EMAIL__,
-        "password": __PASSWORD__
-    },
+    "param": {},
     "expected_result": {
         "status_code": 200,
         "body": {
-            
             "token_type": "bearer",
-            "expires_in" : 300
+            "expires_in": 300
         },
         "json_schema": {
             "type": "object",
@@ -37,11 +33,8 @@ const test_data = {
                     "type": "integer"
                 }
             }
-        
-              
-            }
-        },
+        }
     }
-
+};
 
 module.exports = test_data;

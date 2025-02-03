@@ -7,7 +7,7 @@ const test_data = {
         "accept": "application/json"
     },
     "body": {
-        "email": __EMAIL__,
+        "email": "",
         "password": "12345"
     },
     "expected_result": {

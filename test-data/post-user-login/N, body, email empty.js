@@ -7,8 +7,8 @@ const test_data = {
         "accept": "application/json"
     },
     "body": {
-        "email": "",
-        "password": __PASSWORD__
+        "email": null,
+        "password": "Tokouni12345!"
     },
     "expected_result": {
         "status_code": 401,
@@ -26,8 +26,8 @@ const test_data = {
                     "type": "string"
                 }
             }
-        
-    
+
+
         },
     }
 }

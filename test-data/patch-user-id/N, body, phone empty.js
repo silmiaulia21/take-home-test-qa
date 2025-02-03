@@ -1,14 +1,10 @@
 const path = require('path');
 const scriptName = path.basename(__filename);
-
 const test_data = {
     "title": scriptName,
-    "user_id": "",
-    
-   
     "header": {
         "accept": "application/json",
-        "Authorization": `Bearer ${__TOKEN__}`
+        "Authorization": ""
     },
     "body": {
         "first_name": "Silmi",
@@ -18,30 +14,34 @@ const test_data = {
         "state": "Jawa Barat",
         "country": "Indonesia",
         "postcode": "17137",
-        "phone": "085811023534",
+        "phone": "",
         "dob": "2000-08-21",
-        //"password": "Tokouni12345!",
-        //"email": "Balini210@gmail.com"
+        "password": "Tokouni12345!"
+
     },
     "expected_result": {
-        "status_code": 200,
+        "status_code": 422,
         "body": {
-            "success": true
+            "phone": [
+                "The phone field must be a string."
+            ]
         },
         "json_schema": {
             "type": "object",
-            "required": ["success"],
+            "required": [
+                "phone"
+            ],
+            "additionalProperties": false,
             "properties": {
-                "success": {
-                    "type": "boolean",
-                    "examples": [true]
+                "phone": {
+                    "type": "array",
+                    "additionalItems": false,
+                    "items": {
+                        "type": "string"
+                    }
                 }
-            },
-            "examples": [
-                {
-                    "success": true
-                }
-            ]
+
+            }
         }
     }
 };

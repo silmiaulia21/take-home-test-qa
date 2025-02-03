@@ -23,42 +23,24 @@ const test_data = {
         "status_code": 422,
         "body": {
             "state": [
-                "The state field must be a string."
+                "The state field is required."
             ]
         },
         "json_schema": {
-
             "type": "object",
-            "type": "object",
-            "default": {},
-            "title": "Root Schema",
             "required": [
                 "state"
             ],
+            "additionalProperties": false,
             "properties": {
                 "state": {
                     "type": "array",
-                    "default": [],
-                    "title": "The state Schema",
+                    "additionalItems": false,
                     "items": {
-                        "type": "string",
-                        "default": "",
-                        "title": "A Schema",
-                        "examples": [
-                            "The state field must be a string."
-                        ]
-                    },
-                    "examples": [
-                        [
-                            "The state field must be a string."]
-                    ]
+                        "type": "string"
+                    }
                 }
-            },
-            "examples": [{
-                "state": [
-                    "The state field must be a string."
-                ]
-            }]
+            }
         }
     }
 }

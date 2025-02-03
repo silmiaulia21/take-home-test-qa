@@ -23,42 +23,24 @@ const test_data = {
         "status_code": 422,
         "body": {
             "address": [
-                "The address field must be a string."
+                "The address field is required."
             ]
         },
         "json_schema": {
-
             "type": "object",
-            "type": "object",
-            "default": {},
-            "title": "Root Schema",
             "required": [
                 "address"
             ],
+            "additionalProperties": false,
             "properties": {
                 "address": {
                     "type": "array",
-                    "default": [],
-                    "title": "The address Schema",
+                    "additionalItems": false,
                     "items": {
-                        "type": "string",
-                        "default": "",
-                        "title": "A Schema",
-                        "examples": [
-                            "The address field must be a string."
-                        ]
-                    },
-                    "examples": [
-                        [
-                            "The address field must be a string."]
-                    ]
+                        "type": "string"
+                    }
                 }
-            },
-            "examples": [{
-                "address": [
-                    "The address field must be a string."
-                ]
-            }]
+            }
         }
     }
 }

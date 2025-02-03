@@ -16,7 +16,7 @@ const test_data = {
         "postcode": "17137",
         "phone": "081385253285",
         "dob": "2000-08-21",
-        "password": "Tokouni12345!",
+        "password": "Hariminggu40!",
         "email": ""
 
     },

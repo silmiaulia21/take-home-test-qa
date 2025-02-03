@@ -1,35 +1,34 @@
 const path = require('path');
 const scriptName = path.basename(__filename);
-
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": ""
     },
     "body": {
-        "email": "abc",
-        "password": "Tokouni12345!"
+        "city": "Bandung"
+
     },
     "expected_result": {
-        "status_code": 401,
+        "status_code": 200,
         "body": {
-            "error": "Unauthorized"
+            "success": true
         },
+
         "json_schema": {
             "type": "object",
             "required": [
-                "error"
+                "success"
             ],
             "additionalProperties": false,
             "properties": {
-                "error": {
-                    "type": "string"
+                "success": {
+                    "type": "boolean"
                 }
             }
-        
-    
-        },
+        }
     }
-}
+};
 
 module.exports = test_data;

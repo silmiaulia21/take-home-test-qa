@@ -4,32 +4,31 @@ const scriptName = path.basename(__filename);
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization":`Bearer ${__TOKEN__}`
     },
     "body": {
-        "email": "abc",
-        "password": "Tokouni12345!"
+        "new_password": "Tokouni12345!",
+        "new_password_confirmation": "Tokouni12345!"
     },
     "expected_result": {
-        "status_code": 401,
+        "status_code": 422,
         "body": {
-            "error": "Unauthorized"
+            "message": "The new password field is required."
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "error"
+                "message"
             ],
             "additionalProperties": false,
             "properties": {
-                "error": {
+                "message": {
                     "type": "string"
                 }
             }
-        
-    
-        },
+        }
     }
-}
+};
 
 module.exports = test_data;

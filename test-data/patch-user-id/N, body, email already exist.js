@@ -1,44 +1,37 @@
 const path = require('path');
 const scriptName = path.basename(__filename);
-
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": ""
     },
     "body": {
         "first_name": "Silmi",
         "last_name": "Aulia Hasanah",
-        "address": "Jl.Merak II No.70 II No.70",
-        "city": "",
+        "address": "JL. Merak",
+        "city": "Bekasi",
         "state": "Jawa Barat",
         "country": "Indonesia",
         "postcode": "17137",
-        "phone": "081385253285",
+        "phone": "085811023534",
         "dob": "2000-08-21",
         "password": "Tokouni12345!",
-        "email": ""
+        "email": "Balini210@gmail.com"
     },
     "expected_result": {
-        "status_code": 422,
+        "status_code": 403,
         "body": {
-            "city": [
-                "The city field is required."
-            ]
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "city"
+                "error"
             ],
             "additionalProperties": false,
             "properties": {
-                "city": {
-                    "type": "array",
-                    "additionalItems": false,
-                    "items": {
-                        "type": "string"
-                    }
+                "error": {
+                    "type": "string"
                 }
             }
         }

@@ -23,36 +23,24 @@ const test_data = {
         "status_code": 422,
         "body": {
             "phone": [
-                "The phone field must be a string."
+                "The phone field is required."
             ]
         },
         "json_schema": {
             "type": "object",
-            "default": {},
-            "title": "Root Schema",
             "required": [
                 "phone"
             ],
+            "additionalProperties": false,
             "properties": {
                 "phone": {
                     "type": "array",
-                    "default": [],
-                    "title": "The phone Schema",
+                    "additionalItems": false,
                     "items": {
-                        "type": "string",
-                        "examples": [
-                            "The phone field must be a string."
-                        ]
+                        "type": "string"
                     }
                 }
-            },
-            "examples": [
-                {
-                    "phone": [
-                        "The phone field must be a string."
-                    ]
-                }
-            ]
+            }
         }
     }
 };

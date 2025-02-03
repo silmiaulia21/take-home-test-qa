@@ -4,30 +4,26 @@ const scriptName = path.basename(__filename);
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": "",
     },
-    "body": {
-        "email": "abc",
-        "password": "Tokouni12345!"
-    },
+    "param": { },
     "expected_result": {
         "status_code": 401,
         "body": {
-            "error": "Unauthorized"
+            "message": "Unauthorized"
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "error"
+                "message"
             ],
             "additionalProperties": false,
             "properties": {
-                "error": {
+                "message": {
                     "type": "string"
                 }
             }
-        
-    
         },
     }
 }

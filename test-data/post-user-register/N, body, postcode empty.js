@@ -23,42 +23,24 @@ const test_data = {
         "status_code": 422,
         "body": {
             "postcode": [
-                "The postcode field must be a string."
+                "The postcode field is required."
             ]
         },
         "json_schema": {
-
             "type": "object",
-            "type": "object",
-            "default": {},
-            "title": "Root Schema",
             "required": [
                 "postcode"
             ],
+            "additionalProperties": false,
             "properties": {
                 "postcode": {
                     "type": "array",
-                    "default": [],
-                    "title": "The postcode Schema",
+                    "additionalItems": false,
                     "items": {
-                        "type": "string",
-                        "default": "",
-                        "title": "A Schema",
-                        "examples": [
-                            "The postcode field must be a string."
-                        ]
-                    },
-                    "examples": [
-                        [
-                            "The postcode field must be a string."]
-                    ]
+                        "type": "string"
+                    }
                 }
-            },
-            "examples": [{
-                "postcode": [
-                    "The postcode field must be a string."
-                ]
-            }]
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ const restApiCaller = require('../callers/rest-api')
 async function patchUserId(header, body, id) {
     const caller = new restApiCaller({
         url: __URL__,
-        endPoint: '/user/'+id,
+        endPoint: '/users/'+id,
         header: header,
         body: body
     })
@@ -12,4 +12,5 @@ async function patchUserId(header, body, id) {
 }
 
 
-module.exports = {patchUserId};
+module.exports = {patchUserId
+    };

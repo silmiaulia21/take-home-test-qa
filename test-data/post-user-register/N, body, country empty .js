@@ -23,42 +23,24 @@ const test_data = {
         "status_code": 422,
         "body": {
             "country": [
-                "The country field must be a string."
+                "The country field is required."
             ]
         },
         "json_schema": {
-
             "type": "object",
-            "type": "object",
-            "default": {},
-            "title": "Root Schema",
             "required": [
                 "country"
             ],
+            "additionalProperties": false,
             "properties": {
                 "country": {
                     "type": "array",
-                    "default": [],
-                    "title": "The country Schema",
+                    "additionalItems": false,
                     "items": {
-                        "type": "string",
-                        "default": "",
-                        "title": "A Schema",
-                        "examples": [
-                            "The country field must be a string."
-                        ]
-                    },
-                    "examples": [
-                        [
-                            "The country field must be a string."]
-                    ]
+                        "type": "string"
+                    }
                 }
-            },
-            "examples": [{
-                "country": [
-                    "The country field must be a string."
-                ]
-            }]
+            }
         }
     }
 }

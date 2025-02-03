@@ -1,23 +1,23 @@
 const path = require('path');
 const scriptName = path.basename(__filename);
-
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": ""
     },
     "body": {
         "first_name": "Silmi",
         "last_name": "Aulia Hasanah",
-        "address": "Jl.Merak II No.70 II No.70",
+        "address": "JL. Merak",
         "city": "",
         "state": "Jawa Barat",
         "country": "Indonesia",
         "postcode": "17137",
-        "phone": "081385253285",
+        "phone": "085811023534",
         "dob": "2000-08-21",
-        "password": "Tokouni12345!",
-        "email": ""
+        "password": "Tokouni12345!"
+
     },
     "expected_result": {
         "status_code": 422,
@@ -40,6 +40,7 @@ const test_data = {
                         "type": "string"
                     }
                 }
+
             }
         }
     }

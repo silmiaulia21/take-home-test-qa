@@ -4,32 +4,29 @@ const scriptName = path.basename(__filename);
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
     },
-    "body": {
-        "email": "abc",
-        "password": "Tokouni12345!"
-    },
+    "body": {},
     "expected_result": {
-        "status_code": 401,
-        "body": {
-            "error": "Unauthorized"
+        "status_code": 404,
+        "body":  {
+            "message": "Requested item not found"
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "error"
+                "message"
             ],
             "additionalProperties": false,
             "properties": {
-                "error": {
+                "message": {
                     "type": "string"
+                
                 }
             }
-        
-    
-        },
-    }
+        }
+    },
 }
+
 
 module.exports = test_data;

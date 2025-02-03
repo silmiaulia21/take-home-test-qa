@@ -4,32 +4,28 @@ const scriptName = path.basename(__filename);
 const test_data = {
     "title": scriptName,
     "header": {
-        "accept": "application/json"
+        "accept": "application/json",
+        "Authorization": `Bearer ${__TOKEN__}`
     },
-    "body": {
-        "email": __EMAIL__,
-        "password": "lalalalal"
-    },
+    "param": {},
     "expected_result": {
-        "status_code": 401,
+        "status_code": 200,
         "body": {
-            
-                "error": "Unauthorized"
-    
+            "message": "Successfully logged out"
         },
         "json_schema": {
             "type": "object",
             "required": [
-                "error"
+                "message"
             ],
             "additionalProperties": false,
             "properties": {
-                "error": {
+                "message": {
                     "type": "string"
                 }
             }
         }
     }
-}
+};
 
 module.exports = test_data;
